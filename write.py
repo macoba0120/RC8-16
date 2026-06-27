@@ -20,4 +20,4 @@ with open(output_file, "r+b") as f:
     f.seek(rom_offset)
     f.write(program_bytes)
 
-print(f"Written {len(program_bytes)} bytes to {output_file} at offset 0x{rom_offset:04X} (address 0x{base_addr:04X})")
+print(f"Written {len(program_bytes)} bytes to {output_file} at offset 0x{rom_offset:04X}")
