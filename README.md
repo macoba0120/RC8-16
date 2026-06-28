@@ -30,7 +30,7 @@ is still simple. It's something between C and assembly, hence the name ACCL (Ass
 ## The ROM
 
 There is a file named persistent_rom.bin in this project. This is the ROM of the CPU, loaded upon boot. It contains:  
-	- A monitor program inspired by Wozmon (0x0000-0x03FF) (don't overwrite, boots into this!)  
+	- A monitor program inspired by Wozmon (0x0000-0x03FF) (don't overwrite, it boots into this!)  
 	- Snake (0x0400-0x07FF)  
 	- A Fibonacci sequence printer (0x0800-0x08FF)  
 	- A visual memory viewer (literally shows the memory on screen) (0x0900-0x09FF) 
@@ -52,4 +52,6 @@ Registers are R0-R15. There are a few built-in memory-mapped registers, they are
 	- 0x02: Arrow input (up = 1, down = 2, left = 3, right = 4, released = 0)  
 	- 0x03: Random register  
 	- 0x04: Serial status (bit 0 = data ready flag, bit 1 = ready to transmit flag)
-	- 0x05: Serial data (write prints a letter to the terminal, read reads the last input)
+	- 0x05: Serial data (write prints a letter to the terminal, read reads the last input)  
+  
+Last up, if you are willing to make an OS and want the code to boot straight into it instead of the monitor, the last 2 bytes of the ROM are the startup vector in little endian.
